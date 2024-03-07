@@ -58,12 +58,14 @@ public class RedesController {
 				StringBuffer textoInet = new StringBuffer();
 				while (linha != null) {
 					textoInet.append(linha);
+					textoInet.append("\n");
 					linha = buffer.readLine();
 				}
-				String[] inet = textoInet.toString().split("");
+				String[] inet = textoInet.toString().split("\n");
 				for (int i = 0; i < inet.length; i++) {
-					if (inet[i].contains("inet")) {
+					if (inet[i].contains("inet ")) {
 						System.out.println(inet[i]);
+						System.out.println(inet[i+2]);
 					}
 				}
 				dados.close();
